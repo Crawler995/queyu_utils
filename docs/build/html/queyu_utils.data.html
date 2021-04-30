@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>queyu_utils.data package &#8212; queyu_utils 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/readable.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head><body>
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">queyu_utils 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">queyu_utils.data package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="queyu-utils-data-package">
+<h1>queyu_utils.data package<a class="headerlink" href="#queyu-utils-data-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-queyu_utils.data.record">
+<span id="queyu-utils-data-record-module"></span><h2>queyu_utils.data.record module<a class="headerlink" href="#module-queyu_utils.data.record" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="queyu_utils.data.record.CSVDataRecord">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">queyu_utils.data.record.</span></code><code class="sig-name descname"><span class="pre">CSVDataRecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.data.record.CSVDataRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Util for save critical data as CSV format safely.</p>
+<dl>
+<dt>If we use the normal way to save data as CSV format, we gonna write code like this:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Or use built-in util <code class="docutils literal notranslate"><span class="pre">csv.writer(f)</span></code> to do this. Anyway, we can’t prevent from open the csv file via ‘w’,
+which will flush all content in it if it already exists. Sometimes we will lose some valuable data because of this.
+This class is dedicated to solve this problem.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Run this code firstly to run experiments and record some important data.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csv_data_record</span> <span class="o">=</span> <span class="n">CSVDataRecord</span><span class="p">(</span><span class="s1">&#39;./1.csv&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;model_name&#39;</span><span class="p">,</span> <span class="s1">&#39;acc&#39;</span><span class="p">],</span> <span class="n">backup</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csv_data_record</span><span class="o">.</span><span class="n">write</span><span class="p">([</span><span class="s1">&#39;vgg16&#39;</span><span class="p">,</span> <span class="mf">0.877</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csv_data_record</span><span class="o">.</span><span class="n">write</span><span class="p">([</span><span class="s1">&#39;resnet18&#39;</span><span class="p">,</span> <span class="mf">0.912</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># If run this code again, the previous CSV file will be backup to prevent from losing valuable data.</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Target CSV file path.</p></li>
+<li><p><strong>header</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – CSV header.</p></li>
+<li><p><strong>backup</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to backup the existed CSV file. If backup, the existed file will be backup to
+<code class="docutils literal notranslate"><span class="pre">{file_path}.{cur_time}.backup</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="queyu_utils.data.record.CSVDataRecord.write">
+<code class="sig-name descname"><span class="pre">write</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.data.record.CSVDataRecord.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a row of data to CSV file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – A row of data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="queyu_utils.data.record.JSONDataRecord">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">queyu_utils.data.record.</span></code><code class="sig-name descname"><span class="pre">JSONDataRecord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.data.record.JSONDataRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Util for save critical data as JSON format safely. (Has the same function with <a class="reference internal" href="#queyu_utils.data.record.CSVDataRecord" title="queyu_utils.data.record.CSVDataRecord"><code class="xref py py-class docutils literal notranslate"><span class="pre">CSVDataRecord</span></code></a>)</p>
+<p>If the critical data is saved as dict (object) in the code,
+and it is changed iteratively during your experiment,
+it’s necessary to save the dict in each iteration to ensure the safety of data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Target JSON file path.</p></li>
+<li><p><strong>backup</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to backup the existed JSON file. If backup, the existed file will be backup to
+<code class="docutils literal notranslate"><span class="pre">{file_path}.{cur_time}.backup</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="queyu_utils.data.record.JSONDataRecord.write">
+<code class="sig-name descname"><span class="pre">write</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.data.record.JSONDataRecord.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the object into the JSON file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Target object.</p></li>
+<li><p><strong>readable</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If readable, the reasonable indent will be added into the JSON content.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-queyu_utils.data">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-queyu_utils.data" title="Permalink to this headline">¶</a></h2>
+<p>Utils for data (CSV, JSON, etc.)</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">queyu_utils.data package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-queyu_utils.data.record">queyu_utils.data.record module</a></li>
+<li><a class="reference internal" href="#module-queyu_utils.data">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation index</a><ul>
+  </ul></li>
+</ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/queyu_utils.data.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2021, queyu.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.
+  </div>
+  
+  </body>
+</html>

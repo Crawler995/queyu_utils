@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>queyu_utils.pytorch package &#8212; queyu_utils 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/readable.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head><body>
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">queyu_utils 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">queyu_utils.pytorch package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="queyu-utils-pytorch-package">
+<h1>queyu_utils.pytorch package<a class="headerlink" href="#queyu-utils-pytorch-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-queyu_utils.pytorch.env">
+<span id="queyu-utils-pytorch-env-module"></span><h2>queyu_utils.pytorch.env module<a class="headerlink" href="#module-queyu_utils.pytorch.env" title="Permalink to this headline">¶</a></h2>
+<p>Utils for pytorch environment.</p>
+<dl class="py function">
+<dt id="queyu_utils.pytorch.env.set_random_seed">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.env.</span></code><code class="sig-name descname"><span class="pre">set_random_seed</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.env.set_random_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set random seed for reproducing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seed</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – random seed value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-queyu_utils.pytorch.model">
+<span id="queyu-utils-pytorch-model-module"></span><h2>queyu_utils.pytorch.model module<a class="headerlink" href="#module-queyu_utils.pytorch.model" title="Permalink to this headline">¶</a></h2>
+<p>Utils for pytorch model.</p>
+<dl class="py class">
+<dt id="queyu_utils.pytorch.model.ModelSaveMethod">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">ModelSaveMethod</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.ModelSaveMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Methods to save pytorch model.</p>
+<dl class="py attribute">
+<dt id="queyu_utils.pytorch.model.ModelSaveMethod.FULL">
+<code class="sig-name descname"><span class="pre">FULL</span></code><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#queyu_utils.pytorch.model.ModelSaveMethod.FULL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save full model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="queyu_utils.pytorch.model.ModelSaveMethod.JIT">
+<code class="sig-name descname"><span class="pre">JIT</span></code><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#queyu_utils.pytorch.model.ModelSaveMethod.JIT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save model after JIT trace.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="queyu_utils.pytorch.model.ModelSaveMethod.WEIGHT">
+<code class="sig-name descname"><span class="pre">WEIGHT</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#queyu_utils.pytorch.model.ModelSaveMethod.WEIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the weight (state_dict) of model.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="queyu_utils.pytorch.model.ModuleActivationCapture">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">ModuleActivationCapture</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleActivationCapture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Util for capturing input / output feature map of target module in pytorch model after inferring.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">torchvision.models</span> <span class="kn">import</span> <span class="n">resnet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">resnet18</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># intend to get the input/output feature map of the first conv layer of first ResBlock in ResNet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_activation_capture</span> <span class="o">=</span> <span class="n">ModuleActivationCapture</span><span class="p">(</span><span class="n">get_module</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;layer1.0.conv1&#39;</span><span class="p">),</span> <span class="s1">&#39;cuda&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># let model perform inference...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># get the input/output feature map created during last inference</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_input</span><span class="p">,</span> <span class="n">module_output</span> <span class="o">=</span> <span class="n">module_activation_capture</span><span class="o">.</span><span class="n">input</span><span class="p">,</span> <span class="n">module_activation_capture</span><span class="o">.</span><span class="n">output</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># remove hook to avoid performance waste</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_activation_capture</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – Target module.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="queyu_utils.pytorch.model.ModuleActivationCapture.input">
+<code class="sig-name descname"><span class="pre">input</span></code><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleActivationCapture.input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the input feature map of target module created during last inference.
+Before first inference it’s <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="queyu_utils.pytorch.model.ModuleActivationCapture.output">
+<code class="sig-name descname"><span class="pre">output</span></code><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleActivationCapture.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the output feature map of target module created during last inference.
+Before first inference it’s <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="queyu_utils.pytorch.model.ModuleActivationCapture.remove">
+<code class="sig-name descname"><span class="pre">remove</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleActivationCapture.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the hook after getting the input/output.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="queyu_utils.pytorch.model.ModuleActivationCaptureWrapper">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">ModuleActivationCaptureWrapper</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mac_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleActivationCaptureWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Util for capturing input / output feature map of a series of modules in pytorch model after inferring.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">torchvision.models</span> <span class="kn">import</span> <span class="n">resnet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">resnet18</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># intend to get the input feature map of the first conv layer and</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the output feature map of the first bn layer of first ResBlock in ResNet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># i.e. regard (layer1.0.conv1, layer1.0.bn1) as a (hyper-) module</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_activation_capture_wrapper</span> <span class="o">=</span> <span class="n">ModuleActivationCaptureWrapper</span><span class="p">([</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">ModuleActivationCapture</span><span class="p">(</span><span class="n">get_module</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;layer1.0.conv1&#39;</span><span class="p">),</span> <span class="s1">&#39;cuda&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">ModuleActivationCapture</span><span class="p">(</span><span class="n">get_module</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;layer1.0.bn1&#39;</span><span class="p">),</span> <span class="s1">&#39;cuda&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># let model perform inference...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># get the input/output feature map created during last inference</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_input</span> <span class="o">=</span> <span class="n">module_activation_capture_wrapper</span><span class="o">.</span><span class="n">input</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_output</span> <span class="o">=</span> <span class="n">module_activation_capture_wrapper</span><span class="o">.</span><span class="n">output</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># remove hook to avoid performance waste</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_activation_capture_wrapper</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mac_list</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="#queyu_utils.pytorch.model.ModuleActivationCapture" title="queyu_utils.pytorch.model.ModuleActivationCapture"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModuleActivationCapture</span></code></a>]) – A series of <a class="reference internal" href="#queyu_utils.pytorch.model.ModuleActivationCapture" title="queyu_utils.pytorch.model.ModuleActivationCapture"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModuleActivationCapture</span></code></a> which belong to a series of modules.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="queyu_utils.pytorch.model.ModuleActivationCaptureWrapper.input">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">input</span></code><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleActivationCaptureWrapper.input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the input feature map of first module created during last inference.
+Before first inference it’s <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="queyu_utils.pytorch.model.ModuleActivationCaptureWrapper.output">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">output</span></code><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleActivationCaptureWrapper.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the output feature map of last module created during last inference.
+Before first inference it’s <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="queyu_utils.pytorch.model.ModuleActivationCaptureWrapper.remove">
+<code class="sig-name descname"><span class="pre">remove</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleActivationCaptureWrapper.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the hooks after getting the input/output.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="queyu_utils.pytorch.model.ModuleLatencyProfiler">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">ModuleLatencyProfiler</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleLatencyProfiler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Util for profiling module latency (inference time) in pytorch model during inferring.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">torchvision.models</span> <span class="kn">import</span> <span class="n">resnet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">resnet18</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># intend to get latency of the first conv layer of first ResBlock in ResNet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_latency_profiler</span> <span class="o">=</span> <span class="n">ModuleLatencyProfiler</span><span class="p">(</span><span class="n">get_module</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;layer1.0.conv1&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># let model perform inference...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># get the latency measured during last inference</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_latency</span> <span class="o">=</span> <span class="n">module_latency_profiler</span><span class="o">.</span><span class="n">latency</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># remove hook to avoid performance waste</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_latency_profiler</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – Target module.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="queyu_utils.pytorch.model.ModuleLatencyProfiler.latency">
+<code class="sig-name descname"><span class="pre">latency</span></code><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleLatencyProfiler.latency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the latency value of target module created during last inference.
+Before first inference it’s <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="queyu_utils.pytorch.model.ModuleLatencyProfiler.remove">
+<code class="sig-name descname"><span class="pre">remove</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleLatencyProfiler.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the hook after getting the input/output.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="queyu_utils.pytorch.model.ModuleLatencyProfilerWrapper">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">ModuleLatencyProfilerWrapper</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlp_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleLatencyProfilerWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Util for profiling latency of a series of modules in pytorch model during inferring.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">torchvision.models</span> <span class="kn">import</span> <span class="n">resnet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">resnet18</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># intend to get total latency of the first conv layer and</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the first bn layer of first ResBlock in ResNet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># i.e. regard (layer1.0.conv1, layer1.0.bn1) as a (hyper-) module</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_latency_profiler_wrapper</span> <span class="o">=</span> <span class="n">ModuleLatencyProfilerWrapper</span><span class="p">([</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">ModuleLatencyProfiler</span><span class="p">(</span><span class="n">get_module</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;layer1.0.conv1&#39;</span><span class="p">)),</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">ModuleLatencyProfiler</span><span class="p">(</span><span class="n">get_module</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;layer1.0.bn1&#39;</span><span class="p">)),</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># let model perform inference...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># get the total latency measured during last inference</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_input</span> <span class="o">=</span> <span class="n">module_latency_profiler_wrapper</span><span class="o">.</span><span class="n">latency</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># remove hook to avoid performance waste</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">module_latency_profiler_wrapper</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mlp_list</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="#queyu_utils.pytorch.model.ModuleLatencyProfiler" title="queyu_utils.pytorch.model.ModuleLatencyProfiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModuleLatencyProfiler</span></code></a>]) – A series of <a class="reference internal" href="#queyu_utils.pytorch.model.ModuleLatencyProfiler" title="queyu_utils.pytorch.model.ModuleLatencyProfiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModuleLatencyProfiler</span></code></a> which belong to a series of modules.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="queyu_utils.pytorch.model.ModuleLatencyProfilerWrapper.latency">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">latency</span></code><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleLatencyProfilerWrapper.latency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the total latency value of target modules created during last inference.
+Before first inference it’s <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="queyu_utils.pytorch.model.ModuleLatencyProfilerWrapper.remove">
+<code class="sig-name descname"><span class="pre">remove</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.ModuleLatencyProfilerWrapper.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the hooks after getting the input/output.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.get_ith_layer">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">get_ith_layer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.get_ith_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get i-th layer of pytorch model.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">torchvision.models</span> <span class="kn">import</span> <span class="n">resnet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">resnet18</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_ith_layer</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – A pytorch model.</p></li>
+<li><p><strong>i</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The index of target layer in model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>i-th layer of model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.get_model_flops_and_params">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">get_model_flops_and_params</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.get_model_flops_and_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get FLOPs and number of parameters of pytorch model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – A pytorch model.</p></li>
+<li><p><strong>input_size</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – The size of input data of model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>FLOPs and number of parameters of the model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.get_model_latency">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">get_model_latency</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warmup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_detail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.get_model_latency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the latency (inference time) of pytorch model.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">torchvision.models</span> <span class="kn">import</span> <span class="n">resnet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">resnet18</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_model_latency</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;cuda&#39;</span><span class="p">,</span> <span class="n">warmup</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_detail</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">0.158232</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_model_latency</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;cuda&#39;</span><span class="p">,</span> <span class="n">warmup</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_detail</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">(0.158232, [0.152312, 0.162301, ...])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – A pytorch model.</p></li>
+<li><p><strong>input_size</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, …]) – The size of input data of model.</p></li>
+<li><p><strong>sample_num</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of dummy input for testing.</p></li>
+<li><p><strong>device</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Target device for testing.</p></li>
+<li><p><strong>warmup</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether inferring several dummy samples to warm for more accurate result. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>return_detail</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If True, return all latency info during testing too, i.e. <cite>(avg_latency, latency_list)</cite>,
+or return average latency only. Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>If <code class="docutils literal notranslate"><span class="pre">return_detail</span></code> is True, return all latency info during testing too, i.e. <cite>(avg_latency, latency_list)</cite>,
+or return average latency only.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.get_model_size">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">get_model_size</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.get_model_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the file size of pytorch model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – A pytorch model.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The file size of the model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.get_module">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">get_module</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.get_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get target module from a pytorch model.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">torchvision.models</span> <span class="kn">import</span> <span class="n">resnet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">resnet18</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_module</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;layer1.0.conv1&#39;</span><span class="p">)</span>
+<span class="go">Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – A pytorch model.</p></li>
+<li><p><strong>module_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Target module name, which can be previewed by calling <code class="docutils literal notranslate"><span class="pre">model.named_modules()</span></code> in pytorch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Target module from model. If it doesn’t exist, return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.get_module_conv_layers_name">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">get_module_conv_layers_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.get_module_conv_layers_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name list of all convolution layers in pytorch module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – Target module.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The name list of all convolution layers in the module.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.get_super_module">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">get_super_module</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.get_super_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get super module of target module from a pytorch model.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">torchvision.models</span> <span class="kn">import</span> <span class="n">resnet18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">resnet18</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_super_module</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;layer1.0.conv1&#39;</span><span class="p">)</span>
+<span class="go">BasicBlock(</span>
+<span class="go">  (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)</span>
+<span class="go">  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)</span>
+<span class="go">  (relu): ReLU(inplace=True)</span>
+<span class="go">  (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)</span>
+<span class="go">  (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)</span>
+<span class="go">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – A pytorch model.</p></li>
+<li><p><strong>module_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Target module name, which can be previewed by calling <code class="docutils literal notranslate"><span class="pre">model.named_modules()</span></code> in pytorch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Super module of target module from model. If it doesn’t exist, return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.load_model">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">load_model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.load_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load pytorch model from disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_file_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – File path of a pytorch model.</p></li>
+<li><p><strong>save_method</strong> (<a class="reference internal" href="#queyu_utils.pytorch.model.ModelSaveMethod" title="queyu_utils.pytorch.model.ModelSaveMethod"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSaveMethod</span></code></a>) – The method to save model.</p></li>
+<li><p><strong>device</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Target device for loaded model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>loaded model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.save_model">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">save_model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">model_file_path</span></em>, <em class="sig-param"><span class="pre">input_size=None</span></em>, <em class="sig-param"><span class="pre">save_method=&lt;ModelSaveMethod.WEIGHT:</span> <span class="pre">0&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.save_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save pytorch model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – A pytorch model.</p></li>
+<li><p><strong>model_file_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Target model file path.</p></li>
+<li><p><strong>input_size</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, …]]) – The size of input data of model. Defaults to None.</p></li>
+<li><p><strong>save_method</strong> (<a class="reference internal" href="#queyu_utils.pytorch.model.ModelSaveMethod" title="queyu_utils.pytorch.model.ModelSaveMethod"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSaveMethod</span></code></a>) – The method to save model. Defaults to <a class="reference internal" href="#queyu_utils.pytorch.model.ModelSaveMethod.WEIGHT" title="queyu_utils.pytorch.model.ModelSaveMethod.WEIGHT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelSaveMethod.WEIGHT</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.set_ith_layer">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">set_ith_layer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.set_ith_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace i-th layer of pytorch model with new layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – A pytorch model.</p></li>
+<li><p><strong>i</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The index of target layer in model.</p></li>
+<li><p><strong>layer</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – New layer which will be replaced into model.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="queyu_utils.pytorch.model.set_module">
+<code class="sig-prename descclassname"><span class="pre">queyu_utils.pytorch.model.</span></code><code class="sig-name descname"><span class="pre">set_module</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#queyu_utils.pytorch.model.set_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace target module with new module in a pytorch model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – A pytorch model.</p></li>
+<li><p><strong>module_name</strong> – Target module name, which can be previewed by calling <code class="docutils literal notranslate"><span class="pre">model.named_modules()</span></code> in pytorch.</p></li>
+<li><p><strong>module</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code>) – Module which will be replaced into model.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-queyu_utils.pytorch">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-queyu_utils.pytorch" title="Permalink to this headline">¶</a></h2>
+<p>Utils for pytorch.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">queyu_utils.pytorch package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-queyu_utils.pytorch.env">queyu_utils.pytorch.env module</a></li>
+<li><a class="reference internal" href="#module-queyu_utils.pytorch.model">queyu_utils.pytorch.model module</a></li>
+<li><a class="reference internal" href="#module-queyu_utils.pytorch">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation index</a><ul>
+  </ul></li>
+</ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/queyu_utils.pytorch.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2021, queyu.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.
+  </div>
+  
+  </body>
+</html>
